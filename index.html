@@ -6,6 +6,7 @@
   </head>
   <body>
     <div id="root">
+      <!-- Bind data -->
       <input type="text" id="input" v-model="message">
 
       <p>The value of this input is: {{ message }}</p>
@@ -14,14 +15,15 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
 
     <script>
-      var data = {
-        message: 'Hello World'
-      };
-
+      //Vue instance
       new Vue({
+        //Bind to an element
         el: '#root',
 
-        data: data
+        //Data
+        data: {
+          message: 'Hello World'
+        }
       });
     </script>
   </body>
