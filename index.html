@@ -6,13 +6,7 @@
   </head>
   <body>
     <div id="root">
-      <ul>
-        <li v-for="name in names" v-text="name"></li>
-      </ul>
-
-      <input id="input" type="text" v-model="newName">
-
-      <button @click="addName">Add button</button>
+      <button :title="title">Hover Over Me</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
@@ -24,16 +18,7 @@
         el: '#root',
 
         data: {
-          newName: '',
-          names: ['Joe', 'Mary', 'Jane', 'Jack']
-        },
-
-        methods: {
-          addName() {
-            this.names.push(this.newName);
-
-            this.newName = '';
-          }
+          title: 'Now the title is being set through JavaScript'
         }
       });
     </script>
