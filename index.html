@@ -10,7 +10,9 @@
   </head>
   <body>
     <div id="root">
-      <button :class="{ 'is-loading': isLoading }" @click="toggleClass">Toggle Me</button>
+      <h1>
+        {{ message }}
+      </h1>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
@@ -22,13 +24,7 @@
         el: '#root',
 
         data: {
-          isLoading: false
-        },
-
-        methods: {
-          toggleClass() {
-            this.isLoading = true;
-          }
+          message: 'Hello World'
         }
       });
     </script>
