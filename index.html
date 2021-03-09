@@ -11,7 +11,7 @@
   <body>
     <div id="root">
       <h1>
-        {{ message }}
+        {{ reversedMessage }}
       </h1>
     </div>
 
@@ -25,6 +25,12 @@
 
         data: {
           message: 'Hello World'
+        },
+
+        computed: {
+          reversedMessage() {
+            return this.message.split('').reverse().join('');
+          }
         }
       });
     </script>
