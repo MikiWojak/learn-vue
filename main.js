@@ -1,23 +1,38 @@
 Vue.config.devtools = true;
 
-Vue.component('modal', {
+Vue.component('tabs', {
   template: `
-    <div class="modal is-active">
-      <div class="modal-background"></div>
-      <div class="modal-content">
-        <div class="box">
-          <slot></slot>
-        </div>
-      </div>
-      <button class="modal-close is-large" aria-label="close" @click="$emit('close')"></button>
+  <div>
+    <div class="tabs">
+      <ul>
+        <li class="is-active"><a>Pictures</a></li>
+        <li><a>Music</a></li>
+        <li><a>Videos</a></li>
+        <li><a>Documents</a></li>
+      </ul>
     </div>
-  `
+
+    <div class="tabs-details">
+      <slot></slot>
+    </div>
+  </div>
+  `,
+
+  mounted() {
+    this.tabs = this.$children;
+  }
+});
+
+Vue.component('tab', {
+  template: `
+    <div><slot></slot></div>
+  `,
+
+  props: {
+    name: { required: true }
+  }
 });
 
 new Vue({
-  el: '#root',
-
-  data: {
-    showModal: false
-  }
+  el: '#root'
 });

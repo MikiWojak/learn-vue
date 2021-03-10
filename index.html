@@ -14,13 +14,19 @@
   </head>
   <body>
     <div id="root" class="container">
-      <modal v-if="showModal" @close="showModal = false">
-        <p>
-          Insert Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-      </modal>
+      <tabs>
+        <tab name="About Us" :selected="true">
+          <h1>Here is the content for the About Us page.</h1>
+        </tab>
 
-      <button @click="showModal = true">Show Modal</button>
+        <tab name="About Our Culture">
+          <h1>Here is the content for the About Our Culture page.</h1>
+        </tab>
+
+        <tab name="About Our Vision">
+          <h1>Here is the content for the About Our Vision page.</h1>
+        </tab>
+      </tabs>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
